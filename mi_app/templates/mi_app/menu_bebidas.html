@@ -1,0 +1,61 @@
+{% load static %}
+
+<section class="menu">
+    <h2>Bebidas y Refrescos</h2>
+    <div class="drink-grid">
+        <div class="drink-card">
+            <img src="{% static 'images/agoa de horchata.jpeg' %}" alt="Agua de Horchata">
+            <h3>Aguas Frescas</h3>
+            <ul>
+                <li>Horchata <span>$25</span></li>
+                <li>Jamaica <span>$20</span></li>
+                <li>Tamarindo <span>$20</span></li>
+                <li>Limón <span>$22</span></li>
+                <li>Maracuyá <span>$24</span></li>
+            </ul>
+        </div>
+
+        <div class="drink-card">
+            <img src="{% static 'images/cocacola.jpeg' %}" alt="Coca Cola">
+            <h3>Refrescos</h3>
+            <ul>
+                <li>Coca-Cola <span>$30</span></li>
+                <li>Fanta <span>$28</span></li>
+                <li>Dr. Pepper <span>$32</span></li>
+            </ul>
+        </div>
+
+        <div class="drink-card">
+            <img src="{% static 'images/tecate.jpeg' %}" alt="Cerveza">
+            <h3>Cervezas Sin Alcohol</h3>
+            <ul>
+                <li>Victoria sin alcohol <span>$45</span></li>
+                <li>Indio sin alcohol <span>$48</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="additional-options">
+        <h3>Otras Opciones</h3>
+        <p>También contamos con jugos de frutas naturales, agua mineral y agua embotellada.</p>
+    </div>
+
+    <!-- Botón para regresar -->
+    <div style="text-align: center; margin: 40px 0;">
+        <a href="/" style="
+    display: inline-block;
+    background-color:rgb(236, 139, 48);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+"
+onmouseover="this.style.backgroundColor='#2980b9'"
+onmouseout="this.style.backgroundColor='#3498db'">
+    ← Inicio
+</a>
+    </div>
+</section>

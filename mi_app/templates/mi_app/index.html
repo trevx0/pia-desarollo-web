@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sabroso - Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/mejora.css' %}">
+
+    <style>
+        .hero {
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c');
+            background-size: cover;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .badge {
+            background: #ff8c42;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .promo-banner {
+            background: #e67e22;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Puesto de Tacos "El Sabroso"</h1>
+        <p>¡Los mejores tacos de FACPYA!</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu-comida.html">Menú</a></li>
+                <li><a href="menu-bebidas.html">Bebidas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Auténtica experiencia de tacos</h2>
+        <p>Desde 2015 sirviendo sabor tradicional</p>
+    </div>
+
+    <div class="promo-banner">
+        🎉 ¡Martes de 2x1 en tacos de pastor! 🎉
+    </div>
+
+    <div class="menu-grid">
+        <div class="menu-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c')"></div>
+            <div class="card-content">
+                <h3>Tacos Especiales</h3>
+                <div class="badge">Más vendidos</div>
+                <p>Descubre nuestra selección premium</p>
+                <a href="menu-comida.html" class="btn">Ver menú completo →</a>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1554866585-cd94860890b7')"></div>
+            <div class="card-content">
+                <h3>Bebidas Artesanales</h3>
+                <div class="badge">Nuevas recetas</div>
+                <p>Refrescantes acompañamientos</p>
+                <a href="menu-bebidas.html" class="btn">Ver bebidas →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

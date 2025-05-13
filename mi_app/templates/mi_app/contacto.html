@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto para el puesto de tacos El Sabroso">
+    <title>Contacto - Puesto de Tacos "El Sabroso"</title>
+    <link rel="stylesheet" href="{% static 'styles/mejora.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+    <style>
+        /* Estilos adicionales para mejorar el diseño del contacto */
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: #d32f2f;
+            color: #fff;
+        }
+        .contact-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .contact-info div {
+            margin: 10px;
+            text-align: center;
+        }
+        .contact-info i {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #d32f2f;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-top: 10px;
+        }
+        form input, form textarea {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #d32f2f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Puesto de Tacos "El Sabroso"</h1>
+            <nav>
+                <a href="{% url 'index' %}">Inicio</a>
+                <a href="{% url 'menu_comida' %}">Menú de Comida</a>
+                <a href="{% url 'menu_bebidas' %}">Menú de Bebidas</a>
+                <a href="{% url 'contacto' %}">Contacto</a>  <!-- Cambiado a 'contacto' -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <!-- Información de Contacto -->
+            <section class="contact-info-section">
+                <h2 class="section-title">Otras formas de contacto</h2>
+                
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Correo Electrónico</h3>
+                        <a href="mailto:contacto@elsabroso.com" class="contact-link">contacto@elsabroso.com</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Teléfono</h3>
+                        <a href="tel:+525512345678" class="contact-link">+52 55 1234 5678</a>
+                        <p>Horario: L-V 9am - 6pm</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Ubicación</h3>
+                        <address>
+                            Av. Universidad s/n, Ciudad Universitaria<br>
+                            San Nicolás de los Garza, N.L., México
+                        </address>
+                        <a href="https://goo.gl/maps/ejemplo" target="_blank" rel="noopener" class="map-link">
+                            Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de Contacto -->
+            <section class="contact-form-section">
+                <h2 class="section-title">Contáctanos</h2>
+                <div class="form-container">
+                    <form id="contactForm" method="post" action="{% url 'contacto' %}">
+                        {% csrf_token %}
+                        
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" class="form-input" required 
+                                   placeholder="Ej: Juan Pérez" minlength="3" maxlength="100">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                   placeholder="Ej: ejemplo@dominio.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono" class="form-label">Teléfono (opcional):</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-input"
+                                   placeholder="Ej: 5512345678" pattern="[0-9]{10}">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje" class="form-label">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" class="form-textarea" required
+                                      placeholder="Escribe tu mensaje aquí..." minlength="10" maxlength="500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8:00 - 20:00</p>
+                <p>Sábados: 9:00 - 18:00</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> Puesto de Tacos "El Sabroso". Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Se recomienda incluir FontAwesome para los íconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+    <form id="contactForm" method="post" action="{% url 'contacto' %}">  <!-- Cambiado a 'contacto' -->
+        {% csrf_token %}
+        ...
+    </form>
+</body>
+</html>

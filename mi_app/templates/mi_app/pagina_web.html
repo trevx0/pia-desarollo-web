@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puesto de tacos "El Sabroso"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ff8c42;
+            padding: 20px;
+            color: white;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .info {
+            margin: 20px;
+            text-align: left;
+            display: inline-block;
+            max-width: 600px;
+        }
+        .info h2 {
+            color: #ff8c42;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .contacto {
+            margin: 20px;
+            text-align: left;
+            display: inline-block;
+            max-width: 600px;
+        }
+        .contacto h2 {
+            color: #ff8c42;
+        }
+        .contacto input[type="text"],
+        .contacto input[type="email"],
+        .contacto textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contacto button {
+            background-color: #ff8c42;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contacto button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Puesto de Tacos "El Sabroso"</h1>
+        <p>¡Los mejores tacos de FACPYA!</p>
+    </header>
+
+    <!-- Imágenes que redirigen a los menús -->
+    <a href="{% url 'menu_comida' %}">
+        <img src="https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80" alt="Tacos deliciosos">
+    </a>
+    <a href="{% url 'menu_bebidas' %}">
+        <img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80" alt="Bebidas refrescantes">
+    </a>
+
+    <!-- Información sobre el local -->
+    <div class="info">
+        <h2>¿Quiénes somos?</h2>
+        <p>En el puesto de tacos "El Sabroso" nos especializamos en ofrecer los tacos más deliciosos y auténticos de la Facultad de Contaduría Pública y Administración (FACPYA) de la UANL. Nuestros ingredientes son frescos y de la más alta calidad, preparados al momento para garantizar el mejor sabor.</p>
+        <h2>Ubicación</h2>
+        <p>Nos encontramos dentro de las instalaciones de FACPYA, en la Universidad Autónoma de Nuevo León (UANL). Estamos ubicados cerca del área de comedores, ¡no te será difícil encontrarnos!</p>
+    
+        <h2>Horario de atención</h2>
+        <p>Lunes a viernes: 8:00 am - 6:00 pm</p>
+        <p>Sábados: 10:00 am - 3:00 pm</p>
+        <p>Domingos: Cerrado</p>
+        <h2>Promociones</h2>
+        <p>¡No te pierdas nuestras promociones!</p>
+        <ul>
+            <li>Martes de 2x1 en tacos de pastor</li>
+            <li>Jueves de bebidas gratis al comprar 5 tacos</li>
+            <li>Descuento del 10% para estudiantes con credencial vigente</li>
+        </ul>
+    </div>
+
+    <!-- Sección de contacto -->
+    <div class="contacto">
+        <h2>Formulario de Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <h2>Contacto de Tienda</h2>
+        <p>Para cualquier consulta, escríbenos a <a href="mailto:contacto@creatorworld.com">contacto@creatorworld.com</a> o llámanos al <a href="tel:+528131281672">+52 81 3128 1672</a>.</p>
+        <p>Visítanos en nuestra tienda en Monterrey, ubicada en Av. Revolución 1238, Monterrey, Nuevo León.</p>
+    </div>
+
+    <footer>
+        <p>© 2023 Puesto de Tacos "El Sabroso" - Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
